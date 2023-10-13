@@ -22,14 +22,22 @@ const NavBar = () => {
           <FontDropDown />
         </div>
         <div className="flex gap-2">
-          <div className="w-12 h-6 rounded-xl bg-gray-600 flex items-center">
+          <div
+            className={`w-12 h-6 rounded-xl ${
+              darkMode ? "bg-purple-600" : "bg-gray-600"
+            } flex items-center`}
+          >
             <BsCircleFill
               onClick={enableDarkMode}
               className="text-white w-10 h-5 relative right-2 cursor-pointer"
             />
           </div>
           <div>
-            <BsMoon className="w-6 h-6 cursor-pointer" />
+            <BsMoon
+              className={`w-6 h-6 cursor-pointer ${
+                darkMode ? "text-purple-600" : ""
+              }`}
+            />
           </div>
         </div>
       </section>
