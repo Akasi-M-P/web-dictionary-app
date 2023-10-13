@@ -100,7 +100,7 @@ const WordBody = () => {
         <div className="w-11/12 mx-auto px-2 py-4">
           <ul
             className={`list-disc text-sm lg:text-md xl:text-lg ${
-              darkMode ? "text-white" : ""
+              darkMode ? "text-white dotStyle" : ""
             } `}
           >
             <li className="mb-4">
