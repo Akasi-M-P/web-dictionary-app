@@ -9,7 +9,7 @@ const WordBody = () => {
           <p className="text-purple-600">/ˈkiːbɔːd/</p>
         </div>
         <div className="w-24">
-          <BsFillPlayCircleFill className="w-20 h-20 mx-auto bg-purple-400 text-purple-200 rounded-full hover:text-purple-600 hover:bg-white" />
+          <BsFillPlayCircleFill className="w-16 h-16 mx-auto bg-purple-400 text-purple-200 rounded-full hover:text-purple-600 hover:bg-white" />
         </div>
       </section>
       <section className="flex items-center gap-5 py-5">
