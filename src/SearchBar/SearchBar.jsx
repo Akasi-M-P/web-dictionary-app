@@ -1,12 +1,10 @@
-import {CiSearch} from "react-icons/ci"
+/* eslint-disable react/no-unescaped-entities */
+import { CiSearch } from "react-icons/ci";
 
 const SearchBar = () => {
+  const handleSubmit = () => {};
 
-    const handleSubmit = () => {
-
-    }
-
-    const handleChange = () => {}
+  const handleChange = () => {};
   return (
     <main className="w-full px-4">
       <form
@@ -22,7 +20,8 @@ const SearchBar = () => {
         />
         <CiSearch className="relative w-8 h-8 text-purple-600 opacity-100" />
       </form>
+      {/* <p className="w-11/12 mx-auto text-red-400">Whoops, can't be empty...</p> */}
     </main>
   );
-}
-export default SearchBar
+};
+export default SearchBar;
