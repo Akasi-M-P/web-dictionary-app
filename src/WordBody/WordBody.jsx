@@ -1,11 +1,18 @@
+import { useContext } from "react";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
+import { ThemeContext } from "../Theme/ThemeContext";
 const WordBody = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <main className="w-11/12 mx-auto px-4 py-8">
       <section className="flex justify-between items-center">
         <div>
-          <p className="text-3xl  2xl:text-4xl font-bold text-left text-gray-900">
+          <p
+            className={`text-3xl  2xl:text-4xl font-bold text-left ${
+              darkMode ? "text-white" : "text-gray-900"
+            }`}
+          >
             keyboard
           </p>
           <p className="text-purple-600 2xl:text-lg">/ˈkiːbɔːd/</p>
@@ -16,7 +23,9 @@ const WordBody = () => {
       </section>
       <section className="flex items-center gap-5 py-5">
         <div className="px-1">
-          <p className="italic font-semibold">noun</p>
+          <p className={`italic font-semibold ${darkMode ? "text-white" : ""}`}>
+            noun
+          </p>
         </div>
         <div className="w-11/12">
           <hr className="w-full" />
@@ -27,9 +36,13 @@ const WordBody = () => {
           <p className="text-gray-400 xl:text-lg">Meaning</p>
         </div>
         <div className="w-11/12 mx-auto px-2 py-4">
-          <ul className="list-disc text-sm lg:text-md xl:text-lg leading-6">
+          <ul
+            className={`list-disc text-sm lg:text-md xl:text-lg ${
+              darkMode ? "text-white dotStyle" : ""
+            } leading-6`}
+          >
             <li className="mb-4">
-              <p>
+              <p className="">
                 (etc.) A set of keys used to operate a typewriter, computer etc.
               </p>
             </li>
