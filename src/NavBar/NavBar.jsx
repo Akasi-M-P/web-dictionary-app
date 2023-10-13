@@ -29,7 +29,9 @@ const NavBar = () => {
           >
             <BsCircleFill
               onClick={enableDarkMode}
-              className="text-white w-10 h-5 relative right-2 cursor-pointer"
+              className={`text-white w-10 h-5 relative ${
+                darkMode ? "left-4" : ""
+              } right-2 cursor-pointer`}
             />
           </div>
           <div>
