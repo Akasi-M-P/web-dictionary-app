@@ -28,7 +28,6 @@ const NavBar = () => {
             } flex items-center`}
           >
             <BsCircleFill
-              onClick={enableDarkMode}
               className={`text-white w-10 h-5 relative ${
                 darkMode ? "left-4" : ""
               } right-2 cursor-pointer`}
@@ -36,6 +35,7 @@ const NavBar = () => {
           </div>
           <div>
             <BsMoon
+              onClick={enableDarkMode}
               className={`w-6 h-6 cursor-pointer ${
                 darkMode ? "text-purple-600" : ""
               }`}
