@@ -24,8 +24,8 @@ const WordBody = () => {
         <div className="">
           <p className="text-gray-600">Meaning</p>
         </div>
-        <div className="w-10/12 mx-auto">
-          <ul className="list-disc text-xs">
+        <div className="w-11/12 mx-auto px-2 py-4">
+          <ul className="list-disc text-sm">
             <li>
               (etc.) A set of keys used to operate a typewriter, computer etc.
             </li>
