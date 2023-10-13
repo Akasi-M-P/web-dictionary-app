@@ -18,7 +18,13 @@ const WordBody = () => {
           <p className="text-purple-600 2xl:text-lg">/ˈkiːbɔːd/</p>
         </div>
         <div className="w-24">
-          <BsFillPlayCircleFill className="w-16 h-16 mx-auto bg-purple-400 text-purple-200 rounded-full cursor-pointer hover:text-purple-600 hover:bg-white" />
+          <BsFillPlayCircleFill
+            className={`w-16 h-16 mx-auto ${
+              darkMode
+                ? "bg-purple-200 text-purple-900 opacity-50"
+                : "bg-purple-600 text-purple-200"
+            }  rounded-full cursor-pointer hover:text-purple-600 hover:bg-white`}
+          />
         </div>
       </section>
       <section className="flex items-center gap-5 py-5">
@@ -79,7 +85,9 @@ const WordBody = () => {
       </section>
       <section className="flex items-center gap-5 py-5">
         <div className="px-1">
-          <p className="italic font-semibold">verb</p>
+          <p className={`italic font-semibold ${darkMode ? "text-white" : ""}`}>
+            verb
+          </p>
         </div>
         <div className="w-11/12">
           <hr className="w-full" />
@@ -90,7 +98,11 @@ const WordBody = () => {
           <p className="text-gray-400 xl:text-lg">Meaning</p>
         </div>
         <div className="w-11/12 mx-auto px-2 py-4">
-          <ul className="list-disc text-sm lg:text-md xl:text-lg">
+          <ul
+            className={`list-disc text-sm lg:text-md xl:text-lg ${
+              darkMode ? "text-white" : ""
+            } `}
+          >
             <li className="mb-4">
               <p>To type on a computer keyboard.</p>
               <p className="text-gray-400 text-sm lg:text-md 2xl:text-lg ">
@@ -107,7 +119,11 @@ const WordBody = () => {
         <div>
           <ul>
             <li className="flex items-center gap-2">
-              <a className="text-xs xl:text-lg underline text-gray-900 cursor-pointer">
+              <a
+                className={`text-xs xl:text-lg underline  ${
+                  darkMode ? "text-white" : "text-gray-900"
+                } cursor-pointer`}
+              >
                 https://en.wiktionary.org/wiki/keyboard
               </a>
               <FiExternalLink className="text-xs 2xl:text-lg cursor-pointer" />

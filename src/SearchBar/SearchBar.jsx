@@ -13,7 +13,7 @@ const SearchBar = () => {
     <main className="w-full px-4 md:px-2 lg:px-0 2xl:px-4">
       <form
         onSubmit={handleSubmit}
-        className={`flex w-11/12 mx-auto border-2 rounded-2xl px-4 py-4 ${
+        className={`flex w-11/12 mx-auto rounded-2xl px-4 py-4 ${
           darkMode ? "bg-gray-800 border-none" : "bg-gray-200"
         }   md:px-2`}
       >
