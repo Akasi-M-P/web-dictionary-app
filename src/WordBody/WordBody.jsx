@@ -5,11 +5,13 @@ const WordBody = () => {
     <main className="w-11/12 mx-auto px-4 py-8">
       <section className="flex justify-between items-center">
         <div>
-          <p className="text-3xl font-bold text-left text-gray-900">keyboard</p>
-          <p className="text-purple-600">/ˈkiːbɔːd/</p>
+          <p className="text-3xl  2xl:text-4xl font-bold text-left text-gray-900">
+            keyboard
+          </p>
+          <p className="text-purple-600 2xl:text-lg">/ˈkiːbɔːd/</p>
         </div>
         <div className="w-24">
-          <BsFillPlayCircleFill className="w-16 h-16 mx-auto bg-purple-400 text-purple-200 rounded-full hover:text-purple-600 hover:bg-white" />
+          <BsFillPlayCircleFill className="w-16 h-16 mx-auto bg-purple-400 text-purple-200 rounded-full cursor-pointer hover:text-purple-600 hover:bg-white" />
         </div>
       </section>
       <section className="flex items-center gap-5 py-5">
@@ -22,10 +24,10 @@ const WordBody = () => {
       </section>
       <section className="w-11/12">
         <div className="">
-          <p className="text-gray-400">Meaning</p>
+          <p className="text-gray-400 xl:text-lg">Meaning</p>
         </div>
         <div className="w-11/12 mx-auto px-2 py-4">
-          <ul className="list-disc text-sm leading-6">
+          <ul className="list-disc text-sm lg:text-md xl:text-lg leading-6">
             <li className="mb-4">
               <p>
                 (etc.) A set of keys used to operate a typewriter, computer etc.
@@ -50,12 +52,12 @@ const WordBody = () => {
       </section>
       <section className="flex gap-5">
         <div>
-          <p className="text-gray-400 text-sm">Synonyms</p>
+          <p className="text-gray-400 text-sm xl:text-lg">Synonyms</p>
         </div>
         <div>
           <ul>
             <li>
-              <p className="text-purple-600 text-sm font-bold">
+              <p className="text-purple-600 text-sm xl:text-lg font-bold">
                 electronic keyboard
               </p>
             </li>
@@ -72,13 +74,13 @@ const WordBody = () => {
       </section>
       <section className="w-11/12">
         <div className="">
-          <p className="text-gray-400">Meaning</p>
+          <p className="text-gray-400 xl:text-lg">Meaning</p>
         </div>
         <div className="w-11/12 mx-auto px-2 py-4">
-          <ul className="list-disc text-sm">
+          <ul className="list-disc text-sm lg:text-md xl:text-lg">
             <li className="mb-4">
               <p>To type on a computer keyboard.</p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-sm lg:text-md 2xl:text-lg ">
                 “Keyboarding is the part of this job I hate the most.”
               </p>
             </li>
@@ -87,15 +89,15 @@ const WordBody = () => {
       </section>
       <section className="flex gap-5">
         <div>
-          <p className="text-gray-400 text-xs">Source</p>
+          <p className="text-gray-400 text-xs lg:text-sm xl:text-lg">Source</p>
         </div>
         <div>
           <ul>
             <li className="flex items-center gap-2">
-              <a className="text-xs underline text-gray-900">
+              <a className="text-xs xl:text-lg underline text-gray-900 cursor-pointer">
                 https://en.wiktionary.org/wiki/keyboard
               </a>
-              <FiExternalLink className="text-xs" />
+              <FiExternalLink className="text-xs 2xl:text-lg cursor-pointer" />
             </li>
           </ul>
         </div>
