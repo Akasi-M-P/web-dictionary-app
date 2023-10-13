@@ -22,7 +22,7 @@ const WordBody = () => {
       </section>
       <section className="w-11/12">
         <div className="">
-          <p className="text-gray-600">Meaning</p>
+          <p className="text-gray-400">Meaning</p>
         </div>
         <div className="w-11/12 mx-auto px-2 py-4">
           <ul className="list-disc text-sm leading-6">
