@@ -27,19 +27,47 @@ const WordBody = () => {
         <div className="w-11/12 mx-auto px-2 py-4">
           <ul className="list-disc text-sm leading-6">
             <li className="mb-4">
-              (etc.) A set of keys used to operate a typewriter, computer etc.
+              <p>
+                (etc.) A set of keys used to operate a typewriter, computer etc.
+              </p>
             </li>
             <li className="mb-4">
-              A component of many instruments including the piano, organ, and
-              harpsichord consisting of usually black and white keys that cause
-              different tones to be produced when struck.
+              <p>
+                A component of many instruments including the piano, organ, and
+                harpsichord consisting of usually black and white keys that
+                cause different tones to be produced when struck.
+              </p>
             </li>
             <li className="mb-4">
-              A device with keys of a musical keyboard, used to control
-              electronic sound-producing devices which may be built into or
-              separate from the keyboard device.
+              <p>
+                A device with keys of a musical keyboard, used to control
+                electronic sound-producing devices which may be built into or
+                separate from the keyboard device.
+              </p>
             </li>
           </ul>
+        </div>
+      </section>
+      <section className="flex gap-5">
+        <div>
+          <p className="text-gray-400 text-sm">Synonyms</p>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <p className="text-purple-600 text-sm font-bold">
+                electronic keyboard
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section className="flex items-center gap-5 py-5">
+        <div className="px-1">
+          <p className="italic font-semibold">verb</p>
+        </div>
+        <div className="w-11/12">
+          <hr className="w-full" />
         </div>
       </section>
     </main>
