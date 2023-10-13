@@ -70,6 +70,21 @@ const WordBody = () => {
           <hr className="w-full" />
         </div>
       </section>
+      <section className="w-11/12">
+        <div className="">
+          <p className="text-gray-400">Meaning</p>
+        </div>
+        <div className="w-11/12 mx-auto px-2 py-4">
+          <ul className="list-disc text-sm">
+            <li className="mb-4">
+              <p>To type on a computer keyboard.</p>
+              <p className="text-gray-400">
+                “Keyboarding is the part of this job I hate the most.”
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
   );
 };
