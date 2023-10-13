@@ -1,5 +1,5 @@
 import { BsFillPlayCircleFill } from "react-icons/bs";
-
+import { FiExternalLink } from "react-icons/fi";
 const WordBody = () => {
   return (
     <main className="w-11/12 mx-auto px-4 py-8">
@@ -78,9 +78,24 @@ const WordBody = () => {
           <ul className="list-disc text-sm">
             <li className="mb-4">
               <p>To type on a computer keyboard.</p>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-sm">
                 “Keyboarding is the part of this job I hate the most.”
               </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section className="flex gap-5">
+        <div>
+          <p className="text-gray-400 text-xs">Source</p>
+        </div>
+        <div>
+          <ul>
+            <li className="flex items-center gap-2">
+              <a className="text-xs underline text-gray-900">
+                https://en.wiktionary.org/wiki/keyboard
+              </a>
+              <FiExternalLink className="text-xs" />
             </li>
           </ul>
         </div>
