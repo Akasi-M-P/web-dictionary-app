@@ -2,6 +2,7 @@ import { Fragment, useContext } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { ThemeContext } from "../Theme/ThemeContext";
+import { FontContext } from "../FontContext/FontContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -9,6 +10,11 @@ function classNames(...classes) {
 
 export default function FontDropDown() {
   const { darkMode } = useContext(ThemeContext);
+  const { dispatch, selectedFont } = useContext(FontContext);
+
+  const handleFontChange = (font) => {
+    dispatch({ type: "SET_FONT", payload: font });
+  };
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -17,7 +23,7 @@ export default function FontDropDown() {
             darkMode ? "bg-black text-white" : "bg-white text-gray-900"
           }  px-3 py-2 text-sm font-semibold  shadow-md`}
         >
-          Sans Serif
+          {selectedFont}
           <ChevronDownIcon
             className="-mr-1 h-5 w-5 text-purple-400"
             aria-hidden="true"
@@ -40,12 +46,13 @@ export default function FontDropDown() {
               {({ active }) => (
                 <a
                   href="#"
+                  onClick={() => handleFontChange("Noto Serif")}
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  Serif
+                  Noto Serif
                 </a>
               )}
             </Menu.Item>
@@ -53,12 +60,27 @@ export default function FontDropDown() {
               {({ active }) => (
                 <a
                   href="#"
+                  onClick={() => handleFontChange("Roboto Mono")}
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  Mono
+                  Roboto Mono
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#"
+                  onClick={() => handleFontChange("Sans Serif")}
+                  className={classNames(
+                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    "block px-4 py-2 text-sm"
+                  )}
+                >
+                  Sans Serif
                 </a>
               )}
             </Menu.Item>

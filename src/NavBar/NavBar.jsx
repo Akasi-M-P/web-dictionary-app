@@ -3,11 +3,16 @@ import bookImg from "../assets/dicpic.png";
 import FontDropDown from "../FontDropDown/FontDropDown";
 import { BsMoon, BsCircleFill } from "react-icons/bs";
 import { ThemeContext } from "../Theme/ThemeContext";
+import { FontContext } from "../FontContext/FontContext";
 
 const NavBar = () => {
   const { darkMode, enableDarkMode } = useContext(ThemeContext);
+  const { selectedFont } = useContext(FontContext);
   return (
-    <main className="flex justify-between items-center px-10 py-10 lg:px-12 xl:px-14 2xl:px-24 ">
+    <main
+      style={{ fontFamily: selectedFont }}
+      className="flex justify-between items-center px-10 py-10 lg:px-12 xl:px-14 2xl:px-24 "
+    >
       <section>
         <div className="flex item-center">
           <img

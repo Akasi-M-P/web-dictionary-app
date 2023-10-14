@@ -2,10 +2,15 @@ import { useContext } from "react";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 import { ThemeContext } from "../Theme/ThemeContext";
+import { FontContext } from "../FontContext/FontContext";
 const WordBody = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { selectedFont } = useContext(FontContext);
   return (
-    <main className="w-11/12 mx-auto px-4 py-8">
+    <main
+      style={{ fontFamily: selectedFont }}
+      className="w-11/12 mx-auto px-4 py-8"
+    >
       <section className="flex justify-between items-center">
         <div>
           <p
