@@ -41,7 +41,11 @@ export default function FontDropDown() {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
+          <div
+            className={`py-1 rounded-md ${
+              darkMode ? "bg-black shadow-lg shadow-purple-700" : ""
+            } `}
+          >
             <Menu.Item>
               {({ active }) => (
                 <a
@@ -49,7 +53,8 @@ export default function FontDropDown() {
                   onClick={() => handleFontChange("Noto Serif")}
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
+                    "block px-4 py-2 text-sm",
+                    darkMode ? "text-white" : ""
                   )}
                 >
                   Noto Serif
@@ -63,7 +68,8 @@ export default function FontDropDown() {
                   onClick={() => handleFontChange("Roboto Mono")}
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
+                    "block px-4 py-2 text-sm",
+                    darkMode ? "text-white" : ""
                   )}
                 >
                   Roboto Mono
@@ -77,7 +83,8 @@ export default function FontDropDown() {
                   onClick={() => handleFontChange("Sans Serif")}
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
+                    "block px-4 py-2 text-sm",
+                    darkMode ? "text-white" : ""
                   )}
                 >
                   Sans Serif
