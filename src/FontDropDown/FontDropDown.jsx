@@ -52,9 +52,10 @@ export default function FontDropDown() {
                   href="#"
                   onClick={() => handleFontChange("Noto Serif")}
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    active ? " text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm",
-                    darkMode ? "text-white" : ""
+                    darkMode ? "text-white" : "",
+                    "hover:text-purple-600"
                   )}
                 >
                   Noto Serif
@@ -67,9 +68,10 @@ export default function FontDropDown() {
                   href="#"
                   onClick={() => handleFontChange("Roboto Mono")}
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    active ? " text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm",
-                    darkMode ? "text-white" : ""
+                    darkMode ? "text-white" : "",
+                    "hover:text-purple-600"
                   )}
                 >
                   Roboto Mono
@@ -82,9 +84,10 @@ export default function FontDropDown() {
                   href="#"
                   onClick={() => handleFontChange("Sans Serif")}
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    active ? " text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm",
-                    darkMode ? "text-white" : ""
+                    darkMode ? "text-white" : "",
+                    "hover:text-purple-600"
                   )}
                 >
                   Sans Serif
