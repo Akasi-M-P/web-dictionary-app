@@ -7,7 +7,7 @@ import { FontContext } from "../FontContext/FontContext";
 const WordBody = () => {
   const { darkMode } = useContext(ThemeContext);
   const { selectedFont } = useContext(FontContext);
-  const [noWordFound, setNoWordFound] = useState(true);
+  const [noWordFound, setNoWordFound] = useState(false);
   return (
     <main
       style={{ fontFamily: selectedFont }}
