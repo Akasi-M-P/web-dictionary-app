@@ -14,7 +14,7 @@ const WordBody = () => {
       className="w-11/12 mx-auto px-4 py-8"
     >
       {noWordFound ? (
-        <section className="text-center text-xs h-full">
+        <section className="text-center text-xs h-screen">
           🫤
           <p
             className={
