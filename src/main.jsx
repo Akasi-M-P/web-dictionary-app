@@ -4,12 +4,15 @@ import App from './App.jsx'
 import './index.css'
 import { ThemeProvider } from "./Theme/ThemeContext.jsx";
 import { FontProvider } from "./FontContext/FontContext.jsx";
+import { WordProvider } from "./WordContext/WordContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
       <FontProvider>
-        <App />
+        <WordProvider>
+          <App />
+        </WordProvider>
       </FontProvider>
     </ThemeProvider>
   </React.StrictMode>

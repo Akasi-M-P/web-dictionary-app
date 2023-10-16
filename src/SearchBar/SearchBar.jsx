@@ -4,21 +4,25 @@ import { useContext, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { ThemeContext } from "../Theme/ThemeContext";
 import { FontContext } from "../FontContext/FontContext";
+import { WordContext } from "../WordContext/WordContext";
 
 const SearchBar = () => {
   const { darkMode } = useContext(ThemeContext);
   const { selectedFont } = useContext(FontContext);
   const [emptyInput, setEmptyInput] = useState(true);
-  const handleSubmit = () => {};
+  const { word, setWord, handleSearchWord } = useContext(WordContext);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setWord(e.target.value);
+  };
+
   return (
     <main
       style={{ fontFamily: selectedFont }}
       className="w-full px-4 md:px-2 lg:px-0 2xl:px-4"
     >
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSearchWord}
         className={`flex items-center w-11/12 mx-auto rounded-2xl px-4 py-4 ${
           darkMode ? "bg-gray-800 border-none" : "bg-gray-200"
         }   md:px-2`}
@@ -26,7 +30,7 @@ const SearchBar = () => {
         <input
           type="text"
           name=""
-          value=""
+          value={word}
           placeholder="Search for any word..."
           onChange={handleChange}
           className={`w-11/12 h-8 mx-auto focus:outline-none  ${

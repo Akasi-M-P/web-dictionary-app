@@ -4,16 +4,18 @@ import { BsFillPlayCircleFill } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 import { ThemeContext } from "../Theme/ThemeContext";
 import { FontContext } from "../FontContext/FontContext";
+import { WordContext } from "../WordContext/WordContext";
 const WordBody = () => {
   const { darkMode } = useContext(ThemeContext);
   const { selectedFont } = useContext(FontContext);
   const [noWordFound, setNoWordFound] = useState(false);
+  const { wordDefinition } = useContext(WordContext);
   return (
     <main
       style={{ fontFamily: selectedFont }}
       className="w-11/12 mx-auto px-4 py-8"
     >
-      {noWordFound ? (
+      {!wordDefinition ? (
         <section className="text-center text-xs h-screen">
           🫤
           <p
@@ -38,9 +40,11 @@ const WordBody = () => {
                   darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
-                keyboard
+                {wordDefinition.word}
               </p>
-              <p className="text-purple-600 2xl:text-lg">/ˈkiːbɔːd/</p>
+              <p className="text-purple-600 2xl:text-lg">
+                {wordDefinition.phonetics[0].text}
+              </p>
             </div>
             <div className="w-24">
               <BsFillPlayCircleFill
@@ -59,7 +63,7 @@ const WordBody = () => {
                   darkMode ? "text-white" : ""
                 }`}
               >
-                noun
+                {wordDefinition.meanings[0].partOfSpeech}
               </p>
             </div>
             <div className="w-11/12">
