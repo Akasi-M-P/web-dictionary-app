@@ -80,11 +80,13 @@ const WordBody = () => {
                   darkMode ? "text-white dotStyle" : ""
                 } leading-6`}
               >
-                {wordDefinition.meanings[0].definitions.map((word, index) => (
-                  <li className="mb-4" key={index}>
-                    <p>{word.definition}</p>
-                  </li>
-                ))}
+                {wordDefinition.meanings[0].definitions
+                  .slice(0, 3)
+                  .map((word, index) => (
+                    <li className="mb-4" key={index}>
+                      <p>{word.definition}</p>
+                    </li>
+                  ))}
               </ul>
             </div>
           </section>
