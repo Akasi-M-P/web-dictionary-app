@@ -13,7 +13,7 @@ const WordBody = () => {
   return (
     <main
       style={{ fontFamily: selectedFont }}
-      className="w-11/12 mx-auto px-4 py-8"
+      className="w-11/12 mx-auto px-4 py-8 h-screen"
     >
       {!wordDefinition ? (
         <section className="text-center text-xs h-screen">
@@ -111,7 +111,7 @@ const WordBody = () => {
                   darkMode ? "text-white" : ""
                 }`}
               >
-                verb
+                {wordDefinition.meanings[1].partOfSpeech}
               </p>
             </div>
             <div className="w-11/12">
@@ -129,9 +129,9 @@ const WordBody = () => {
                 } `}
               >
                 <li className="mb-4">
-                  <p>To type on a computer keyboard.</p>
+                  <p>{wordDefinition.meanings[1].definitions[0].definition}</p>
                   <p className="text-gray-400 text-sm lg:text-md 2xl:text-lg ">
-                    “Keyboarding is the part of this job I hate the most.”
+                    "{wordDefinition.meanings[1].definitions[0].example}"
                   </p>
                 </li>
               </ul>
