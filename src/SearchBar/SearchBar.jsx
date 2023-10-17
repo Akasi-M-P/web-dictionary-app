@@ -34,7 +34,7 @@ const SearchBar = () => {
           placeholder="Search for any word..."
           onChange={handleChange}
           className={`w-11/12 h-8 mx-auto focus:outline-none  ${
-            darkMode ? "bg-gray-800" : "bg-gray-200"
+            darkMode ? "bg-gray-800 text-white" : "bg-gray-200"
           }`}
         />
         <CiSearch className="relative w-8 h-8 lg:w-10 lg:h-10 text-purple-600 opacity-100" />

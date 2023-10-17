@@ -80,26 +80,11 @@ const WordBody = () => {
                   darkMode ? "text-white dotStyle" : ""
                 } leading-6`}
               >
-                <li className="mb-4">
-                  <p className="">
-                    (etc.) A set of keys used to operate a typewriter, computer
-                    etc.
-                  </p>
-                </li>
-                <li className="mb-4">
-                  <p>
-                    A component of many instruments including the piano, organ,
-                    and harpsichord consisting of usually black and white keys
-                    that cause different tones to be produced when struck.
-                  </p>
-                </li>
-                <li className="mb-4">
-                  <p>
-                    A device with keys of a musical keyboard, used to control
-                    electronic sound-producing devices which may be built into
-                    or separate from the keyboard device.
-                  </p>
-                </li>
+                {wordDefinition.meanings[0].definitions.map((word, index) => (
+                  <li className="mb-4" key={index}>
+                    <p>{word.definition}</p>
+                  </li>
+                ))}
               </ul>
             </div>
           </section>
