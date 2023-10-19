@@ -7,6 +7,8 @@ export const WordContext = createContext();
 export const WordProvider = ({ children }) => {
   const [wordDefinition, setWordDefinition] = useState(null);
   const [searchWord, setSearchWord] = useState(false);
+
+
   const [word, setWord] = useState("");
 
   const handleSearchWord = async () => {
@@ -14,7 +16,7 @@ export const WordProvider = ({ children }) => {
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
       );
-      console.log(response, "res");
+      console.log(response.data, "res");
       setWordDefinition(response.data[0]);
     } catch (error) {
       console.error("Failed to get word definition", error);
