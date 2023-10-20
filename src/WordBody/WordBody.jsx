@@ -8,10 +8,15 @@ import { WordContext } from "../WordContext/WordContext";
 const WordBody = () => {
   const { darkMode } = useContext(ThemeContext);
   const { selectedFont } = useContext(FontContext);
-  const { wordDefinition, errorMessage, setErrorMessage, playAudio } =
-    useContext(WordContext);
+  const {
+    wordDefinition,
+    errorMessage,
+    setErrorMessage,
+    emptyInput,
+    playAudio,
+  } = useContext(WordContext);
 
-  if (errorMessage)
+  if (errorMessage && !emptyInput)
     return (
       <main
         style={{ fontFamily: selectedFont }}
