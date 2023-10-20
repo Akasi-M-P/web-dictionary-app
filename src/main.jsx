@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { ThemeProvider } from "./Theme/ThemeContext.jsx";
 import { FontProvider } from "./FontContext/FontContext.jsx";
-import { WordProvider } from "./WordContext/WordContext.jsx";
+import { WordProvider } from "./WordContext/WordContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

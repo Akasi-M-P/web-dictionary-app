@@ -8,14 +8,15 @@ import { WordContext } from "../WordContext/WordContext";
 const WordBody = () => {
   const { darkMode } = useContext(ThemeContext);
   const { selectedFont } = useContext(FontContext);
-  const [noWordFound, setNoWordFound] = useState(false);
-  const { wordDefinition } = useContext(WordContext);
-  return (
-    <main
-      style={{ fontFamily: selectedFont }}
-      className="w-11/12 mx-auto px-4 py-8 h-screen"
-    >
-      {!wordDefinition ? (
+  const { wordDefinition, errorMessage, setErrorMessage, playAudio } =
+    useContext(WordContext);
+
+  if (errorMessage)
+    return (
+      <main
+        style={{ fontFamily: selectedFont }}
+        className="w-11/12 mx-auto px-4 py-8 h-screen"
+      >
         <section className="text-center text-xs h-screen">
           🫤
           <p
@@ -31,6 +32,24 @@ const WordBody = () => {
             the web instead.
           </p>
         </section>
+      </main>
+    );
+
+  return (
+    <main
+      style={{ fontFamily: selectedFont }}
+      className="w-11/12 mx-auto px-4 py-8 h-screen"
+    >
+      {!wordDefinition ? (
+        <section className="text-center text-xs h-screen">
+          <p
+            className={
+              darkMode ? "text-white font-bold" : "text-black font-bold"
+            }
+          >
+            Please Enter a Word
+          </p>
+        </section>
       ) : (
         <>
           <section className="flex justify-between items-center">
@@ -43,7 +62,7 @@ const WordBody = () => {
                 {wordDefinition.word}
               </p>
               <p className="text-purple-600 2xl:text-lg">
-                {wordDefinition.phonetics[0].text}
+                {wordDefinition.phonetics[0].text || wordDefinition.word}
               </p>
             </div>
             <div className="w-24">
@@ -95,12 +114,13 @@ const WordBody = () => {
               <p className="text-gray-400 text-sm xl:text-lg">Synonyms</p>
             </div>
             <div>
-              <ul>
-                <li>
-                  <p className="text-purple-600 text-sm xl:text-lg font-bold">
-                    electronic keyboard
-                  </p>
-                </li>
+              <ul className="text-purple-600 text-sm xl:text-lg font-bold flex space-x-4">
+                {wordDefinition.meanings[0].synonyms.map((synonym, index) => (
+                  <li key={index}>{synonym}</li>
+                )) ||
+                  wordDefinition.meanings[1].synonyms.map((synonym, index) => (
+                    <li key={index}>{synonym}</li>
+                  ))}
               </ul>
             </div>
           </section>
@@ -111,7 +131,8 @@ const WordBody = () => {
                   darkMode ? "text-white" : ""
                 }`}
               >
-                {wordDefinition.meanings[1].partOfSpeech}
+                {wordDefinition.meanings[0].partOfSpeech ||
+                  wordDefinition.meanings[1].partOfSpeech}
               </p>
             </div>
             <div className="w-11/12">
@@ -129,9 +150,15 @@ const WordBody = () => {
                 } `}
               >
                 <li className="mb-4">
-                  <p>{wordDefinition.meanings[1].definitions[0].definition}</p>
+                  <p>
+                    {wordDefinition.meanings[0].definitions[0].definition ||
+                      wordDefinition.meanings[1].definitions[0].definition}
+                  </p>
                   <p className="text-gray-400 text-sm lg:text-md 2xl:text-lg ">
-                    "{wordDefinition.meanings[1].definitions[0].example}"
+                    "
+                    {wordDefinition.meanings[0].definitions[0].example ||
+                      wordDefinition.meanings[0].definitions[1].example}
+                    "
                   </p>
                 </li>
               </ul>
@@ -151,7 +178,7 @@ const WordBody = () => {
                       darkMode ? "text-white" : "text-gray-900"
                     } cursor-pointer`}
                   >
-                    https://en.wiktionary.org/wiki/keyboard
+                    {wordDefinition.sourceUrls}
                   </a>
                   <FiExternalLink className="text-xs 2xl:text-lg cursor-pointer" />
                 </li>

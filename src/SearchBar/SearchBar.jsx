@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CiSearch } from "react-icons/ci";
 import { ThemeContext } from "../Theme/ThemeContext";
 import { FontContext } from "../FontContext/FontContext";
@@ -9,8 +9,9 @@ import { WordContext } from "../WordContext/WordContext";
 const SearchBar = () => {
   const { darkMode } = useContext(ThemeContext);
   const { selectedFont } = useContext(FontContext);
-  const [emptyInput, setEmptyInput] = useState(true);
-  const { word, setWord, handleSearchWord } = useContext(WordContext);
+
+  const { word, setWord, handleSearchWord, emptyInput, setEmptyInput } =
+    useContext(WordContext);
 
   const handleChange = (e) => {
     setWord(e.target.value);
