@@ -119,7 +119,7 @@ const WordBody = () => {
               <p className="text-gray-400 text-sm xl:text-lg">Synonyms</p>
             </div>
             <div>
-              <ul className="text-purple-600 text-sm xl:text-lg font-bold flex space-x-4">
+              <ul className="text-purple-600 text-sm xl:text-lg font-bold  grid grid-cols-3 gap-2">
                 {wordDefinition.meanings[0].synonyms.map((synonym, index) => (
                   <li key={index}>{synonym}</li>
                 )) ||
@@ -136,8 +136,8 @@ const WordBody = () => {
                   darkMode ? "text-white" : ""
                 }`}
               >
-                {wordDefinition.meanings[0].partOfSpeech ||
-                  wordDefinition.meanings[1].partOfSpeech}
+                {wordDefinition.meanings[1].partOfSpeech ||
+                  wordDefinition.meanings[0].partOfSpeech}
               </p>
             </div>
             <div className="w-11/12">
@@ -156,14 +156,14 @@ const WordBody = () => {
               >
                 <li className="mb-4">
                   <p>
-                    {wordDefinition.meanings[0].definitions[0].definition ||
-                      wordDefinition.meanings[1].definitions[0].definition}
+                    {wordDefinition.meanings[1].definitions[0].definition ||
+                      wordDefinition.meanings[0].definitions[0].definition}
                   </p>
+
                   <p className="text-gray-400 text-sm lg:text-md 2xl:text-lg ">
-                    "
-                    {wordDefinition.meanings[0].definitions[0].example ||
-                      wordDefinition.meanings[0].definitions[1].example}
-                    "
+                    {wordDefinition.meanings[0]?.definitions[0]?.example ||
+                      wordDefinition.meanings[1]?.definitions[0]?.example ||
+                      ""}
                   </p>
                 </li>
               </ul>
