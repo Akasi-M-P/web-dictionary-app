@@ -30,14 +30,30 @@ const WordProvider = ({ children }) => {
   };
 
   function playAudio() {
-    const { phonetics } = wordDefinition;
-    try {
-      let audio = new Audio(wordDefinition.meanings[1].phonetics[0].audio);
-      audio.play();
-    } catch (e) {
-      console.log({ e });
+    if (wordDefinition) {
+      const phonetics = wordDefinition.phonetics;
+
+      if (phonetics && phonetics.length > 0) {
+        const audioURL = phonetics[0].audio;
+
+        if (audioURL) {
+          try {
+            let audio = new Audio(audioURL);
+            audio.play();
+          } catch (e) {
+            console.error("Failed to play audio", e);
+          }
+        } else {
+          console.error("No audio URL found in phonetics");
+        }
+      } else {
+        console.error("No phonetics data found");
+      }
+    } else {
+      console.error("No word definition available");
     }
   }
+
 
   return (
     <WordContext.Provider

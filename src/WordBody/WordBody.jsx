@@ -72,6 +72,7 @@ const WordBody = () => {
             </div>
             <div className="w-24">
               <BsFillPlayCircleFill
+                onClick={playAudio}
                 className={`w-16 h-16 mx-auto ${
                   darkMode
                     ? "bg-purple-200 text-purple-900 opacity-50"
